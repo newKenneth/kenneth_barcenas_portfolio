@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenneth B. Barcenas | BSIT & UI/UX Designer Portfolio</title>
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="antialiased overflow-x-hidden">
+
+  <!-- Ambient Background Glows -->
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="scrollProgress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-sky-400 via-indigo-400 to-emerald-400 z-50 w-0 transition-all duration-150"></div>
+
+  <!-- Sticky Glass Navigation -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-white/10">
+    <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2.5 font-extrabold text-lg tracking-tight group">
+        <img src="assets/logo.png" alt="Kenneth Barcenas logo"
+          class="w-10 h-10 rounded-lg object-cover shadow-lg shadow-sky-500/20 group-hover:scale-105 transition" />
+        <span>Kenneth<span class="text-[var(--accent)]">.dev</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden md:flex items-center gap-7 text-sm font-medium text-[var(--text-secondary)]">
+        <li><a href="#about" class="nav-link hover:text-[var(--text-primary)] transition">About</a></li>
+        <li><a href="#skills" class="nav-link hover:text-[var(--text-primary)] transition">Skills</a></li>
+        <li><a href="#projects" class="nav-link hover:text-[var(--text-primary)] transition">Projects</a></li>
+        <li><a href="#journey" class="nav-link hover:text-[var(--text-primary)] transition">Journey</a></li>
+        <li><a href="#contact" class="nav-link hover:text-[var(--text-primary)] transition">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" aria-label="Toggle theme"
+          class="p-2.5 rounded-xl glass-card hover:border-[var(--accent)] transition flex items-center justify-center">
+          <i data-lucide="sun" id="sunIcon" class="w-4 h-4 hidden text-amber-400"></i>
+          <i data-lucide="moon" id="moonIcon" class="w-4 h-4 text-sky-400"></i>
+        </button>
+
+        <a href="#contact"
+          class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-sky-500 to-indigo-500 text-white shadow-md shadow-sky-500/20 hover:opacity-90 transition">
+          <span>Hire / OJT</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" aria-label="Toggle mobile menu"
+          class="md:hidden p-2.5 rounded-xl glass-card">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 pb-5 pt-2 border-t border-white/10 glass-nav">
+      <ul class="flex flex-col gap-3 text-sm font-medium text-[var(--text-secondary)]">
+        <li><a href="#about" class="mobile-link block py-1.5 hover:text-[var(--accent)]">About</a></li>
+        <li><a href="#skills" class="mobile-link block py-1.5 hover:text-[var(--accent)]">Skills</a></li>
+        <li><a href="#projects" class="mobile-link block py-1.5 hover:text-[var(--accent)]">Projects</a></li>
+        <li><a href="#journey" class="mobile-link block py-1.5 hover:text-[var(--accent)]">Journey</a></li>
+        <li><a href="#contact" class="mobile-link block py-1.5 hover:text-[var(--accent)]">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 relative z-10">
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 md:py-28 grid lg:grid-cols-12 gap-12 items-center reveal">
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card text-xs font-mono text-[var(--accent)] mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>Aspiring UI/UX Designer • OJT Ready Feb 2027</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.12]">
+          Designing clear, human-centered interfaces as a
+          <span class="gradient-text block mt-1 min-h-[1.25em]">
+            <span id="typedRole"></span><span class="cursor-blink">|</span>
+          </span>
+        </h1>
+
+        <p class="mt-6 text-base sm:text-lg text-[var(--text-secondary)] max-w-2xl leading-relaxed">
+          I’m <strong class="text-[var(--text-primary)]">Kenneth B. Barcenas</strong>, a fourth-year BSIT student at <strong class="text-[var(--text-primary)]">STI College Legazpi</strong> pursuing a career as a <strong class="text-[var(--text-primary)]">UI/UX Designer</strong>. I craft structured wireframes, interactive prototypes, and intuitive user flows in Figma while bringing front-end awareness in HTML, CSS, and JavaScript. In my capstone—a Web-Based Real-Time Evacuation Tracking and Reporting System—I focused on multi-user layouts and clear workflows that help people act quickly when information matters most. Alongside my Oracle Java Fundamentals certification and collaborative academic work, I am preparing for my 480-hour OJT starting February 2027, eager to design thoughtful digital products, learn from experienced teams, and grow into an impactful UI/UX professional.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#projects"
+            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold bg-gradient-to-r from-sky-500 to-indigo-500 text-white shadow-lg shadow-sky-500/25 hover:scale-[1.02] active:scale-[0.99] transition">
+            <span>Explore Projects</span>
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+          </a>
+
+          <a href="assets/Kenneth-B-Barcenas-Resume.pdf" download="Kenneth-B-Barcenas-Resume.pdf"
+          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold glass-card hover:border-[var(--accent)] transition">
+          <i data-lucide="download" class="w-4 h-4 text-[var(--accent)]"></i>
+          <span>Download Resume</span>
+        </a>
+
+          <a href="#about"
+            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold glass-card hover:border-[var(--accent)] transition">
+            <span>About Me</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/kenneth-barcenas-a22495438/" target="_blank" rel="noopener noreferrer"
+            class="social-link-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold glass-card hover:border-[var(--accent)] transition">
+            <i data-lucide="linkedin" class="w-4 h-4 text-[var(--accent)]"></i>
+            <span>LinkedIn Profile</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5 text-[var(--text-secondary)]"></i>
+          </a>
+
+        </div>
+
+        <!-- Social Links in Hero -->
+        
+
+        <!-- Quick Stats -->
+        <div class="mt-12 grid grid-cols-3 gap-4 pt-8 border-t border-white/10 max-w-lg">
+          <div>
+            <p class="text-2xl font-extrabold font-mono text-[var(--accent)]">480h</p>
+            <p class="text-xs text-[var(--text-secondary)] mt-0.5">OJT Ready (Feb 2027)</p>
+          </div>
+          <div>
+            <p class="text-2xl font-extrabold font-mono text-indigo-400">Oracle</p>
+            <p class="text-xs text-[var(--text-secondary)] mt-0.5">Java Certified</p>
+          </div>
+          <div>
+            <p class="text-2xl font-extrabold font-mono text-emerald-400">Figma</p>
+            <p class="text-xs text-[var(--text-secondary)] mt-0.5">UI/UX Prototyping</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Terminal / Profile Card -->
+      <div class="lg:col-span-5">
+        <div class="tilt-card glass-card rounded-3xl p-6 border border-white/10 shadow-2xl relative overflow-hidden">
+          <div class="pb-4 mb-4 border-b border-white/10">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2" aria-hidden="true">
+                <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+              </div>
+              <span class="text-xs font-mono text-[var(--text-secondary)]">kenneth.profile.json</span>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="relative shrink-0">
+                <img
+                  src="assets/profile.jpg"
+                  alt="Professional portrait of Kenneth B. Barcenas"
+                  class="profile-avatar w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover object-[50%_22%] border-2 border-sky-400/70"
+                  onerror="this.src='https://ui-avatars.com/api/?name=Kenneth+Barcenas&background=0ea5e9&color=fff&size=192';"
+                />
+                <span class="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-400 ring-[3px] ring-[var(--bg-secondary)]" title="Open for OJT"></span>
+              </div>
+              <div class="min-w-0">
+                <h2 class="font-bold text-lg sm:text-xl">Kenneth B. Barcenas</h2>
+                <p class="text-xs sm:text-sm font-mono text-[var(--accent)] mt-1">BSIT • STI College Legazpi</p>
+                <p class="text-[11px] sm:text-xs text-[var(--text-secondary)] mt-1">UI/UX Designer • Web Developer</p>
+              </div>
+            </div>
+          </div>
+
+          <pre class="text-xs sm:text-sm font-mono leading-relaxed overflow-x-auto text-[var(--text-secondary)]"><code>{
+  <span class="text-sky-400">"name"</span>: <span class="text-emerald-400">"Kenneth B. Barcenas"</span>,
+  <span class="text-sky-400">"education"</span>: <span class="text-emerald-400">"BSIT @ STI College Legazpi"</span>,
+  <span class="text-sky-400">"graduation"</span>: <span class="text-amber-300">"June 2027"</span>,
+  <span class="text-sky-400">"location"</span>: <span class="text-emerald-400">"Bicol, Philippines"</span>,
+  <span class="text-sky-400">"coreFocus"</span>: [
+    <span class="text-indigo-300">"UI/UX Design (Figma)"</span>,
+    <span class="text-indigo-300">"Web Development"</span>,
+    <span class="text-indigo-300">"Java & Python"</span>,
+    <span class="text-indigo-300">"Cloud & Networking"</span>
+  ],
+  <span class="text-sky-400">"mindset"</span>: <span class="text-emerald-400">"Adaptable & detail-driven"</span>
+}</code></pre>
+
+          <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+            <span class="text-[var(--text-secondary)] flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[var(--accent)]"></i> Legazpi / Bacacay, Albay
+            </span>
+            <button id="quickCopyBtn" class="text-[var(--accent)] hover:underline font-mono flex items-center gap-1">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Email
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- About & OJT Availability Section -->
+    <section id="about" class="py-20 border-t border-white/10 reveal">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-[var(--accent)]">01 / Introduction</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mt-1">About Me</h2>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-7 space-y-6">
+          <div class="glass-card rounded-3xl p-7 space-y-4 text-[var(--text-secondary)] leading-relaxed">
+            <p>
+              I am a fourth-year <strong class="text-[var(--text-primary)]">Bachelor of Science in Information Technology</strong> student at STI College Legazpi with a strong interest in turning complex system requirements into clean, approachable interfaces.
+            </p>
+            <p>
+              From designing multi-user layouts in Figma and authoring structured Data Flow Diagrams (DFDs) for my capstone—a <strong class="text-[var(--text-primary)]">Web-Based Real-Time Evacuation Tracking and Reporting System</strong>—to hands-on labs in AWS, Docker, Wireshark, and Python 3D graphics, I value thoroughness, clarity, and continuous learning.
+            </p>
+          </div>
+
+          <!-- Dedicated OJT Availability Block (February 2027) -->
+          <div class="ojt-callout glass-card rounded-3xl p-6 sm:p-7">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>OJT READY • STARTING FEBRUARY 2027</span>
+              </div>
+              <span class="text-xs font-mono text-[var(--text-secondary)]">480 Required Hours</span>
+            </div>
+
+            <h3 class="text-lg font-bold">On-the-Job Training (OJT) Availability</h3>
+            <p class="text-sm text-[var(--text-secondary)] mt-1.5 leading-relaxed">
+              Seeking a Host Training Establishment (HTE) starting <strong class="text-[var(--text-primary)]">February 2027</strong> ahead of my <strong class="text-[var(--text-primary)]">June 2027</strong> BSIT graduation. Open to on-site roles in Legazpi / Albay & Bicol, or remote/hybrid teams.
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="ojt-pill">UI/UX & Product Design</span>
+              <span class="ojt-pill">Front-End / Web Dev</span>
+              <span class="ojt-pill">IT Support & Systems</span>
+              <span class="ojt-pill">QA & Documentation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 grid grid-cols-1 gap-4">
+          <div class="glass-card rounded-2xl p-5 flex items-start gap-4">
+            <div class="p-3 rounded-xl bg-sky-500/15 text-sky-400">
+              <i data-lucide="layout" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-sm">User-Centered Design</h3>
+              <p class="text-xs text-[var(--text-secondary)] mt-1">Mid-level Figma wireframing, component libraries, and accessible user flows.</p>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 flex items-start gap-4">
+            <div class="p-3 rounded-xl bg-indigo-500/15 text-indigo-400">
+              <i data-lucide="award" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-sm">Oracle Certified</h3>
+              <p class="text-xs text-[var(--text-secondary)] mt-1">Certified in Java Fundamentals with solid OOP and software logic foundations.</p>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 flex items-start gap-4">
+            <div class="p-3 rounded-xl bg-emerald-500/15 text-emerald-400">
+              <i data-lucide="server" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-sm">Full-Stack & IT Ops Ready</h3>
+              <p class="text-xs text-[var(--text-secondary)] mt-1">Experience across web technologies, databases, networking, and hardware troubleshooting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section (Tool Tags Instead of Percentage Bars) -->
+    <section id="skills" class="py-20 border-t border-white/10 reveal">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-[var(--accent)]">02 / Capabilities</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mt-1">Skills & Tech Stack</h2>
+        </div>
+
+        <!-- Interactive Category Filter -->
+        <div class="flex flex-wrap gap-2" id="skillFilters">
+          <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold" data-filter="all">All</button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold" data-filter="design">UI/UX</button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold" data-filter="dev">Development</button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold" data-filter="infra">Cloud & IT</button>
+        </div>
+      </div>
+
+      <div id="skillsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="skill-card tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="design">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="p-2.5 rounded-xl bg-pink-500/15 text-pink-400"><i data-lucide="figma" class="w-5 h-5"></i></span>
+              <span class="text-xs font-mono text-[var(--text-secondary)]">UI/UX</span>
+            </div>
+            <h3 class="font-bold text-base">Figma & Wireframing</h3>
+            <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">Interactive prototypes, responsive layouts, and multi-role dashboards.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-1.5">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Wireframes</span>
+            <span class="skill-tag">Prototyping</span>
+            <span class="skill-tag">User Flows</span>
+          </div>
+        </div>
+
+        <div class="skill-card tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="dev">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="p-2.5 rounded-xl bg-sky-500/15 text-sky-400"><i data-lucide="code-2" class="w-5 h-5"></i></span>
+              <span class="text-xs font-mono text-[var(--text-secondary)]">Frontend</span>
+            </div>
+            <h3 class="font-bold text-base">HTML5, CSS3 & JavaScript</h3>
+            <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">Semantic markup, responsive styling, and interactive browser behavior.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-1.5">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3 / Tailwind</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">VS Code</span>
+          </div>
+        </div>
+
+        <div class="skill-card tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="dev">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="p-2.5 rounded-xl bg-amber-500/15 text-amber-400"><i data-lucide="coffee" class="w-5 h-5"></i></span>
+              <span class="text-xs font-mono text-[var(--text-secondary)]">Languages</span>
+            </div>
+            <h3 class="font-bold text-base">Java & Python</h3>
+            <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">Oracle-certified Java OOP fundamentals and Python 3D rendering.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-1.5">
+            <span class="skill-tag">Java (Oracle Cert.)</span>
+            <span class="skill-tag">Python 3.14</span>
+            <span class="skill-tag">PyOpenGL</span>
+            <span class="skill-tag">pygame-ce</span>
+          </div>
+        </div>
+
+        <div class="skill-card tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="dev">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="p-2.5 rounded-xl bg-indigo-500/15 text-indigo-400"><i data-lucide="database" class="w-5 h-5"></i></span>
+              <span class="text-xs font-mono text-[var(--text-secondary)]">Architecture</span>
+            </div>
+            <h3 class="font-bold text-base">Databases & System Analysis</h3>
+            <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">Structured data modeling, process flows, and capstone documentation.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-1.5">
+            <span class="skill-tag">SQL / RDBMS</span>
+            <span class="skill-tag">DFD</span>
+            <span class="skill-tag">Capstone Docs</span>
+          </div>
+        </div>
+
+        <div class="skill-card tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="infra">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="p-2.5 rounded-xl bg-emerald-500/15 text-emerald-400"><i data-lucide="cloud" class="w-5 h-5"></i></span>
+              <span class="text-xs font-mono text-[var(--text-secondary)]">Cloud & DevOps</span>
+            </div>
+            <h3 class="font-bold text-base">AWS, Docker & Kubernetes</h3>
+            <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">Cloud access/network concepts, containers, and IT service workflows.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-1.5">
+            <span class="skill-tag">AWS (IAM / VPC)</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">ITSM / DevOps</span>
+          </div>
+        </div>
+
+        <div class="skill-card tilt-card glass-card rounded-2xl p-6 flex flex-col justify-between" data-category="infra">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="p-2.5 rounded-xl bg-cyan-500/15 text-cyan-400"><i data-lucide="wifi" class="w-5 h-5"></i></span>
+              <span class="text-xs font-mono text-[var(--text-secondary)]">Infrastructure</span>
+            </div>
+            <h3 class="font-bold text-base">Networking & Troubleshooting</h3>
+            <p class="text-xs text-[var(--text-secondary)] mt-1.5 leading-relaxed">Packet inspection, system setup, and hardware diagnostics.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-1.5">
+            <span class="skill-tag">Wireshark</span>
+            <span class="skill-tag">OS Deployment</span>
+            <span class="skill-tag">Hardware Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 border-t border-white/10 reveal">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-[var(--accent)]">03 / Selected Work</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mt-1">Featured Projects</h2>
+        </div>
+
+        <!-- Project Filter Tabs -->
+        <div class="flex flex-wrap gap-2" id="projectFilters">
+          <button class="proj-filter-btn active px-4 py-2 rounded-xl text-xs font-semibold" data-proj="all">All Projects</button>
+          <button class="proj-filter-btn px-4 py-2 rounded-xl text-xs font-semibold" data-proj="web">Web & Capstone</button>
+          <button class="proj-filter-btn px-4 py-2 rounded-xl text-xs font-semibold" data-proj="uiux">UI/UX</button>
+          <button class="proj-filter-btn px-4 py-2 rounded-xl text-xs font-semibold" data-proj="graphics">Graphics</button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6" id="projectsGrid">
+
+        <!-- Project 1 -->
+        <article class="project-card tilt-card glass-card rounded-3xl overflow-hidden flex flex-col justify-between group" data-proj-cat="web">
+          <div>
+            <div class="h-40 bg-gradient-to-br from-sky-500/25 via-indigo-500/20 to-emerald-500/20 p-6 flex flex-col justify-between border-b border-white/10 relative">
+              <div class="flex justify-between items-center">
+                <span class="px-2.5 py-1 rounded-lg bg-black/40 backdrop-blur-md text-[11px] font-mono text-sky-300">CAPSTONE</span>
+                <i data-lucide="shield-alert" class="w-6 h-6 text-sky-400 group-hover:scale-110 transition"></i>
+              </div>
+              <p class="text-xs font-mono text-[var(--text-secondary)]">Real-Time Disaster Response</p>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold leading-snug">Real-Time Evacuation Tracking & Reporting System</h3>
+              <p class="text-xs text-[var(--text-secondary)] mt-2.5 leading-relaxed">
+                Web-based platform monitoring evacuation center occupancy, evacuee check-ins, and emergency status reports across multiple user roles.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] font-mono">
+              <span class="px-2.5 py-1 rounded-md bg-white/5 text-[var(--text-secondary)]">Figma</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/5 text-[var(--text-secondary)]">Full-Stack Web</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/5 text-[var(--text-secondary)]">DFD / SQL</span>
+            </div>
+            <button
+              class="open-modal-btn w-full py-2.5 rounded-xl text-xs font-semibold bg-white/5 hover:bg-sky-500 hover:text-slate-950 border border-white/10 transition flex items-center justify-center gap-2"
+              data-title="Web-Based Real-Time Evacuation Tracking and Reporting System"
+              data-role="UI/UX Designer & System Developer"
+              data-stack="Figma, HTML/CSS/JS, Relational Database, System Documentation"
+              data-summary="Designed multi-user UI layouts in Figma and engineered a centralized tracking portal so local responders and administrators can monitor shelter capacity and incident reports in real time."
+              data-highlights="Designed multi-role interfaces for admins and camp managers;Authored comprehensive Data Flow Diagrams (DFDs) and Chapter 4 evaluation metrics;Streamlined real-time evacuee headcount reporting.">
+              <span>Inspect Case Study</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card tilt-card glass-card rounded-3xl overflow-hidden flex flex-col justify-between group" data-proj-cat="graphics">
+          <div>
+            <div class="h-40 bg-gradient-to-br from-purple-500/25 via-indigo-500/20 to-sky-500/20 p-6 flex flex-col justify-between border-b border-white/10">
+              <div class="flex justify-between items-center">
+                <span class="px-2.5 py-1 rounded-lg bg-black/40 backdrop-blur-md text-[11px] font-mono text-purple-300">3D ENGINE</span>
+                <i data-lucide="box" class="w-6 h-6 text-purple-400 group-hover:rotate-12 transition"></i>
+              </div>
+              <p class="text-xs font-mono text-[var(--text-secondary)]">OpenGL & Matrix Math</p>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold leading-snug">Interactive 3D Graphics Visualizer</h3>
+              <p class="text-xs text-[var(--text-secondary)] mt-2.5 leading-relaxed">
+                Hardware-accelerated 3D rendering environment built with Python 3.14, PyOpenGL, and pygame-ce featuring real-time object transformations.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] font-mono">
+              <span class="px-2.5 py-1 rounded-md bg-white/5 text-[var(--text-secondary)]">Python 3.14</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/5 text-[var(--text-secondary)]">PyOpenGL</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/5 text-[var(--text-secondary)]">pygame-ce</span>
+            </div>
+            <button
+              class="open-modal-btn w-full py-2.5 rounded-xl text-xs font-semibold bg-white/5 hover:bg-sky-500 hover:text-slate-950 border border-white/10 transition flex items-center justify-center gap-2"
+              data-title="Interactive 3D Graphics Visualizer"
+              data-role="Python Developer"
+              data-stack="Python 3.14.8, PyOpenGL, pygame-ce, VS Code"
+              data-summary="Implemented 3D mesh rendering, rotation/scaling transformations, and real-time viewport controls using OpenGL pipelines in Python."
+              data-highlights="Real-time 3D translation, rotation, and scaling controls;Custom vertex/color rendering routines;Smooth 60 FPS game-loop architecture with pygame-ce.">
+              <span>Inspect Case Study</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card tilt-card glass-card rounded-3xl overflow-hidden flex flex-col justify-between group" data-proj-cat="uiux">
+          <div>
+            <div class="h-40 bg-gradient-to-br from-pink-500/25 via-rose-500/20 to-amber-500/20 p-6 flex flex-col justify-between border-b border-white/10">
+              <div class="flex justify-between items-center">
+                <span class="px-2.5 py-1 rounded-lg bg-black/40 backdrop-blur-md text-[11px] font-mono text-pink-300">UI/UX SYSTEM</span>
+                <i data-lucide="smartphone" class="w-6 h-6 text-pink-400 group-hover:scale-110 transition"></i>
+              </div>
+              <p class="text-xs font-mono text-[var(--text-secondary)]">Design Tokens & Flows</p>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold leading-snug">Mobile Booking & Service Prototype</h3>
+              <p class="text-xs text-[var(--text-secondary)] mt-2.5 leading-relaxed">
+                End-to-end interactive Figma prototype emphasizing clean typography, clear visual hierarchy, and frictionless user onboarding.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6">
+            <div class="flex flex-wrap gap-1.5 mb-4 text-[11px] font-mono">
+              <span class="px-2.5 py-1 rounded-md bg-white/5 text-[var(--text-secondary)]">Figma</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/5 text-[var(--text-secondary)]">Prototyping</span>
+              <span class="px-2.5 py-1 rounded-md bg-white/5 text-[var(--text-secondary)]">Design System</span>
+            </div>
+            <button
+              class="open-modal-btn w-full py-2.5 rounded-xl text-xs font-semibold bg-white/5 hover:bg-sky-500 hover:text-slate-950 border border-white/10 transition flex items-center justify-center gap-2"
+              data-title="Mobile Booking & Service Prototype"
+              data-role="UI/UX Designer"
+              data-stack="Figma, Auto-Layout, Interactive Components"
+              data-summary="Crafted a modular mobile interface system featuring reusable buttons, cards, navigation bars, and interactive user journeys."
+              data-highlights="Consistent color & spacing token system;Interactive micro-transitions between booking states;Accessibility-checked contrast ratios.">
+              <span>Inspect Case Study</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Journey / Timeline Section -->
+    <section id="journey" class="py-20 border-t border-white/10 reveal">
+      <span class="text-xs font-mono uppercase tracking-widest text-[var(--accent)]">04 / Background</span>
+      <h2 class="text-3xl md:text-4xl font-extrabold mt-1 mb-10">Education & Milestones</h2>
+
+      <div class="space-y-6 border-l-2 border-sky-500/30 pl-6 ml-2">
+        <div class="glass-card rounded-2xl p-6 relative">
+          <span class="absolute -left-[33px] top-7 w-3.5 h-3.5 rounded-full bg-sky-400 ring-4 ring-[var(--bg-primary)]"></span>
+          <span class="text-xs font-mono text-[var(--accent)]">2023 – June 2027 (Expected)</span>
+          <h3 class="text-lg font-bold mt-1">Bachelor of Science in Information Technology</h3>
+          <p class="text-sm text-[var(--text-secondary)] mt-1">STI College Legazpi — Focused on software engineering, UI/UX design, networking, and capstone systems development.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 relative">
+          <span class="absolute -left-[33px] top-7 w-3.5 h-3.5 rounded-full bg-indigo-400 ring-4 ring-[var(--bg-primary)]"></span>
+          <span class="text-xs font-mono text-indigo-400">2026</span>
+          <h3 class="text-lg font-bold mt-1">Oracle Certificate — Java Fundamentals</h3>
+          <p class="text-sm text-[var(--text-secondary)] mt-1">Certified proficiency in object-oriented programming, Java syntax, and core application logic.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 relative">
+          <span class="absolute -left-[33px] top-7 w-3.5 h-3.5 rounded-full bg-slate-500 ring-4 ring-[var(--bg-primary)]"></span>
+          <span class="text-xs font-mono text-[var(--text-secondary)]">2017 – 2023</span>
+          <h3 class="text-lg font-bold mt-1">Junior & Senior High School</h3>
+          <p class="text-sm text-[var(--text-secondary)] mt-1">Zamora Memorial College</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 border-t border-white/10 reveal">
+      <div class="grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-5">
+          <span class="text-xs font-mono uppercase tracking-widest text-[var(--accent)]">05 / Connect</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mt-1">Let’s Work Together</h2>
+          <p class="text-sm text-[var(--text-secondary)] mt-4 leading-relaxed">
+            Currently seeking <strong class="text-[var(--text-primary)]">480-hour IT / UI/UX OJT opportunities</strong> starting February 2027, as well as collaborative web and design projects.
+          </p>
+
+          <div class="mt-8 space-y-4">
+            <div class="glass-card rounded-2xl p-4 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <i data-lucide="mail" class="w-4 h-4 text-[var(--accent)]"></i>
+                <span id="emailText" class="text-xs font-mono">kennethbarcenas.b@gmail.com</span>
+              </div>
+              <button id="copyEmailBtn" class="px-3 py-1.5 rounded-lg bg-sky-500/15 text-[var(--accent)] text-xs font-semibold hover:bg-sky-500 hover:text-slate-950 transition">
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <form id="contactForm" class="md:col-span-7 glass-card rounded-3xl p-7 space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-xs font-mono uppercase tracking-wider mb-2 text-[var(--text-secondary)]">Your Name</label>
+              <input type="text" id="name" required placeholder="Juan Dela Cruz"
+                class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[var(--accent)] focus:outline-none text-sm" />
+            </div>
+            <div>
+              <label for="email" class="block text-xs font-mono uppercase tracking-wider mb-2 text-[var(--text-secondary)]">Email Address</label>
+              <input type="email" id="email" required placeholder="juan@company.com"
+                class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[var(--accent)] focus:outline-none text-sm" />
+            </div>
+          </div>
+          <div>
+            <label for="message" class="block text-xs font-mono uppercase tracking-wider mb-2 text-[var(--text-secondary)]">Message</label>
+            <textarea id="message" rows="4" required placeholder="Hi Kenneth, we'd love to discuss an OJT / UI/UX role..."
+              class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[var(--accent)] focus:outline-none text-sm"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full py-3.5 rounded-xl font-semibold bg-gradient-to-r from-sky-500 to-indigo-500 text-white shadow-lg shadow-sky-500/20 hover:opacity-95 transition flex items-center justify-center gap-2">
+            <span>Send Message</span>
+            <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-8 text-center text-xs text-[var(--text-secondary)] relative z-10">
+    <p>© <span id="year"></span> Kenneth B. Barcenas • Crafted with HTML, CSS & JavaScript</p>
+  </footer>
+
+  <!-- Interactive Case Study Modal -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-md p-4">
+    <div class="max-w-lg w-full glass-card rounded-3xl p-7 border border-white/15 shadow-2xl transform scale-95 transition-transform duration-200" id="modalBox">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <span id="modalRole" class="text-xs font-mono uppercase tracking-wider text-[var(--accent)]"></span>
+          <h3 id="modalTitle" class="text-xl font-extrabold mt-1"></h3>
+        </div>
+        <button id="closeModalBtn" aria-label="Close modal" class="p-2 rounded-xl bg-white/5 hover:bg-white/15 transition">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <p id="modalSummary" class="text-sm text-[var(--text-secondary)] mt-4 leading-relaxed"></p>
+
+      <div class="mt-4 p-3.5 rounded-xl bg-white/5 border border-white/10">
+        <span class="text-[11px] font-mono uppercase text-[var(--text-secondary)] block">Tech & Tools</span>
+        <span id="modalStack" class="text-xs font-semibold text-[var(--text-primary)] mt-0.5 block"></span>
+      </div>
+
+      <div class="mt-5">
+        <h4 class="text-xs font-mono uppercase tracking-wider text-[var(--accent)] mb-2">Key Deliverables</h4>
+        <ul id="modalHighlights" class="space-y-2 text-xs text-[var(--text-secondary)]"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast"
+    class="fixed bottom-6 right-6 z-50 hidden items-center gap-2 px-4 py-3 rounded-xl bg-slate-900 border border-sky-500/40 text-white text-xs font-semibold shadow-2xl">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toastMsg"></span>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
